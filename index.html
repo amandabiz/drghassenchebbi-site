@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr Ghassen Chebbi — Chirurgien Maxillo-Facial & Esthétique</title>
+  <meta name="description" content="Chirurgien maxillo-facial et esthétique à Tunis. Rhinoplastie, BBL, abdominoplastie, lifting. Prenez rendez-vous sur WhatsApp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #fff; color: #1A1714; }
+
+    :root {
+      --white: #FFFFFF;
+      --cream: #FAF8F5;
+      --dark: #1A1714;
+      --dark-muted: rgba(26,23,20,0.65);
+      --gold: #C9A47A;
+      --gold-light: rgba(201,164,122,0.15);
+      --gold-border: rgba(201,164,122,0.3);
+      --whatsapp: #25D366;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: 72px; display: flex; align-items: center;
+      justify-content: space-between; padding: 0 48px;
+      background: #1A1714; transition: background 0.3s;
+    }
+    nav.scrolled { background: rgba(26,23,20,0.97); backdrop-filter: blur(12px); }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo-circle {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1.5px solid var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Outfit', sans-serif; font-weight: 600;
+      font-size: 13px; color: var(--gold); flex-shrink: 0;
+    }
+    .nav-logo-text .name { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 15px; color: #fff; }
+    .nav-logo-text .title { font-family: 'Inter', sans-serif; font-size: 10px; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+    .btn-wa {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--whatsapp); color: #fff;
+      padding: 9px 20px; border-radius: 100px;
+      font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500;
+      text-decoration: none; transition: transform 0.15s, opacity 0.2s; white-space: nowrap;
+    }
+    .btn-wa:hover { transform: scale(1.03); opacity: 0.9; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh; background: var(--dark);
+      display: grid; grid-template-columns: 1fr 1fr; overflow: hidden;
+    }
+    .hero-photo { position: relative; overflow: hidden; }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .hero-badge {
+      position: absolute; bottom: 40px; right: 24px;
+      background: rgba(26,23,20,0.85); backdrop-filter: blur(12px);
+      border: 1px solid var(--gold-border); border-radius: 12px;
+      padding: 14px 18px; display: flex; align-items: center; gap: 10px;
+    }
+    .hero-badge-icon {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--gold-light);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .hero-badge .b-title { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 13px; color: #fff; }
+    .hero-badge .b-sub { font-family: 'Inter', sans-serif; font-size: 11px; color: var(--gold); }
+    .hero-text {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 120px 64px 80px;
+    }
+    .hero-eyebrow {
+      font-family: 'Inter', sans-serif; font-size: 12px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 28px;
+    }
+    .hero-text h1 {
+      font-family: 'Outfit', sans-serif; font-weight: 700;
+      font-size: clamp(44px, 4.5vw, 68px);
+      line-height: 1.05; letter-spacing: -0.03em;
+      color: #fff; margin-bottom: 20px;
+    }
+    .hero-text p {
+      font-family: 'Inter', sans-serif; font-size: 17px;
+      line-height: 1.7; color: rgba(255,255,255,0.65);
+      max-width: 420px; margin-bottom: 48px;
+    }
+    .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .btn-wa-lg {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--whatsapp); color: #fff;
+      padding: 14px 28px; border-radius: 100px;
+      font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500;
+      text-decoration: none; transition: transform 0.15s, opacity 0.2s;
+    }
+    .btn-wa-lg:hover { transform: translateY(-2px); opacity: 0.9; }
+    .hero-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: rgba(255,255,255,0.65); font-family: 'Inter', sans-serif; font-size: 15px;
+      text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.25);
+      padding-bottom: 2px; transition: color 0.2s, border-color 0.2s;
+    }
+    .hero-link:hover { color: #fff; border-color: rgba(255,255,255,0.7); }
+
+    /* ── SECTIONS ── */
+    .section { padding: 100px 64px; }
+    .section-cream { background: var(--cream); }
+    .section-white { background: var(--white); }
+    .section-dark { background: var(--dark); }
+    .section-title {
+      font-family: 'Outfit', sans-serif; font-weight: 700;
+      font-size: clamp(28px, 3vw, 44px);
+      letter-spacing: -0.02em; color: var(--dark); margin-bottom: 14px;
+    }
+    .gold-bar { width: 44px; height: 2px; background: var(--gold); }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    /* ── ABOUT ── */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .about-grid p { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.8; color: var(--dark-muted); margin-bottom: 16px; max-width: 520px; }
+    .about-grid p strong { color: var(--dark); }
+    .pillar-card {
+      display: flex; align-items: flex-start; gap: 18px;
+      padding: 24px; border-radius: 14px;
+      border: 1px solid rgba(26,23,20,0.08);
+      margin-bottom: 16px; transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .pillar-card:hover { border-color: var(--gold-border); box-shadow: 0 4px 24px var(--gold-light); }
+    .pillar-icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: var(--gold-light); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .pillar-title { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.1em; color: var(--dark); margin-bottom: 6px; }
+    .pillar-desc { font-family: 'Inter', sans-serif; font-size: 14px; color: var(--dark-muted); line-height: 1.6; }
+
+    /* ── SERVICES ── */
+    .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .service-card {
+      background: var(--white); border-radius: 16px; padding: 36px;
+      border: 1px solid rgba(26,23,20,0.06);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .service-card:hover { border-color: var(--gold-border); box-shadow: 0 8px 32px var(--gold-light); }
+    .service-icon {
+      width: 52px; height: 52px; background: var(--gold-light);
+      border-radius: 12px; display: flex; align-items: center;
+      justify-content: center; color: var(--gold); margin-bottom: 20px;
+    }
+    .service-card h3 { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 18px; color: var(--dark); margin-bottom: 14px; letter-spacing: -0.01em; }
+    .service-card ul { list-style: none; }
+    .service-card li {
+      display: flex; align-items: center; gap: 10px;
+      font-family: 'Inter', sans-serif; font-size: 14px;
+      color: var(--dark-muted); line-height: 1.5; padding: 4px 0;
+    }
+    .service-card li::before {
+      content: ''; width: 5px; height: 5px; border-radius: 50%;
+      background: var(--gold); flex-shrink: 0;
+    }
+    .service-note { font-family: 'Inter', sans-serif; font-size: 13px; color: var(--gold); font-style: italic; margin-top: 16px; line-height: 1.6; }
+
+    /* ── PROCESS ── */
+    .process-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; position: relative; }
+    .process-line {
+      position: absolute; top: 31px; left: 10%; right: 10%;
+      height: 1px; background: linear-gradient(90deg, transparent, var(--gold-border) 15%, var(--gold-border) 85%, transparent);
+    }
+    .process-step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 12px; }
+    .step-circle {
+      width: 62px; height: 62px; border-radius: 50%; z-index: 1;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px; flex-shrink: 0;
+    }
+    .step-circle.active { background: var(--gold); border: 2px solid var(--gold); }
+    .step-circle.inactive { background: #fff; border: 2px solid rgba(26,23,20,0.12); }
+    .step-num { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.04em; }
+    .step-circle.active .step-num { color: #fff; }
+    .step-circle.inactive .step-num { color: var(--gold); }
+    .step-title { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 13px; color: var(--dark); margin-bottom: 8px; line-height: 1.4; }
+    .step-desc { font-family: 'Inter', sans-serif; font-size: 12px; color: var(--dark-muted); line-height: 1.6; }
+
+    /* ── SOCIAL ── */
+    .ig-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+      border-radius: 100px; padding: 6px 18px; margin-bottom: 20px;
+      font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; color: #fff; letter-spacing: 0.06em;
+    }
+    .social-title { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(28px,3vw,42px); line-height: 1.1; letter-spacing: -0.02em; color: #fff; margin-bottom: 14px; }
+    .social-sub { font-family: 'Inter', sans-serif; font-size: 16px; color: rgba(255,255,255,0.55); max-width: 520px; margin: 0 auto; }
+    .ig-card {
+      background: linear-gradient(135deg, #1a0a2e 0%, #0d1a2e 60%, #1a1714 100%);
+      border: 1px solid var(--gold-border); border-radius: 20px; padding: 36px;
+      position: relative; overflow: hidden;
+    }
+    .ig-card-halo {
+      position: absolute; top: -60px; right: -60px;
+      width: 220px; height: 220px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,164,122,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .ig-photo { display: block; width: 100%; aspect-ratio: 1; border-radius: 10px; object-fit: cover; border: 1px solid rgba(201,164,122,0.15); margin-bottom: 24px; transition: transform 0.2s; }
+    .ig-photo:hover { transform: scale(1.02); }
+    .ig-handle { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 19px; color: #fff; margin-bottom: 6px; }
+    .ig-label { font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.35); margin-bottom: 10px; letter-spacing: 0.02em; }
+    .ig-desc { font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.6; margin-bottom: 24px; }
+    .btn-ig {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+      color: #fff; padding: 12px 24px; border-radius: 100px;
+      font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600;
+      text-decoration: none; transition: transform 0.15s, opacity 0.2s;
+    }
+    .btn-ig:hover { transform: translateY(-2px); opacity: 0.9; }
+    .social-secondary { margin-top: 20px; }
+    .fb-card {
+      display: flex; align-items: center; gap: 16px;
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px; padding: 24px; text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .fb-card:hover { border-color: var(--gold-border); background: rgba(201,164,122,0.05); }
+    .fb-icon { width: 44px; height: 44px; border-radius: 12px; background: #1877F2; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+    .fb-card-name { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 15px; color: #fff; margin-bottom: 2px; }
+    .fb-card-sub { font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255,255,255,0.4); }
+    .fb-arrow { margin-left: auto; flex-shrink: 0; }
+
+    /* ── CTA ── */
+    .cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .cta-grid h2 { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(26px,2.5vw,38px); letter-spacing: -0.02em; color: var(--dark); margin-bottom: 14px; }
+    .cta-grid p { font-family: 'Inter', sans-serif; font-size: 15px; color: var(--dark-muted); line-height: 1.7; }
+    .cta-right { display: flex; flex-direction: column; gap: 12px; }
+    .btn-wa-cta {
+      display: flex; align-items: center; justify-content: center; gap: 12px;
+      background: var(--whatsapp); color: #fff;
+      padding: 18px 32px; border-radius: 12px;
+      font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 500;
+      text-decoration: none; transition: transform 0.15s, opacity 0.2s;
+    }
+    .btn-wa-cta:hover { transform: translateY(-2px); opacity: 0.9; }
+    .cta-note { font-family: 'Inter', sans-serif; font-size: 13px; color: var(--dark-muted); text-align: center; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--dark); padding: 36px 64px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+    .footer-links { display: flex; gap: 36px; flex-wrap: wrap; }
+    .footer-links a { display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255,255,255,0.45); text-decoration: none; }
+    .footer-copy { font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.25); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-photo { height: 60vw; min-height: 260px; max-height: 380px; }
+      .hero-badge { display: none; }
+      .hero-text { padding: 40px 24px 60px; }
+      .section { padding: 64px 20px; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-grid p { max-width: 100%; }
+      .services-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr; gap: 24px; }
+      .process-line { display: none; }
+      .process-step { flex-direction: row; text-align: left; align-items: flex-start; }
+      .step-circle { margin-bottom: 0; margin-right: 16px; }
+      .cta-grid { grid-template-columns: 1fr; gap: 28px; }
+      .footer-inner { flex-direction: column; }
+      .footer-links { flex-direction: column; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-circle">GC</div>
+    <div class="nav-logo-text">
+      <div class="name">Dr Ghassen Chebbi</div>
+      <div class="title">Chirurgien Maxillo-Facial &amp; Esthétique</div>
+    </div>
+  </a>
+  <div style="display:flex;align-items:center;gap:36px;">
+    <div class="nav-links">
+      <a href="#apropos">À propos</a>
+      <a href="#interventions">Interventions</a>
+      <a href="#approche">Approche</a>
+      <a href="#reseaux">Résultats</a>
+    </div>
+    <a href="https://wa.me/33744185975" target="_blank" rel="noopener" class="btn-wa">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Contacter sur WhatsApp
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-photo">
+    <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_39ojHRsaEKagfD8twfwdrnKphm9/0be22b6c-5058-4ec0-b6f3-8aca00c79126.jpg" alt="Dr Ghassen Chebbi, Chirurgien Esthétique" />
+    <div class="hero-badge">
+      <div class="hero-badge-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A47A" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      </div>
+      <div>
+        <div class="b-title">Chirurgien certifié</div>
+        <div class="b-sub">Maxillo-facial &amp; Esthétique</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-text">
+    <div class="hero-eyebrow">Chirurgien Maxillo-Facial &amp; Esthétique</div>
+    <h1>Dr Ghassen<br>Chebbi</h1>
+    <p>L'art d'harmoniser le visage et la silhouette avec précision, naturel et sécurité.</p>
+    <div class="hero-ctas">
+      <a href="https://wa.me/33744185975" target="_blank" rel="noopener" class="btn-wa-lg">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Demander un avis sur WhatsApp
+      </a>
+      <a href="#interventions" class="hero-link">
+        Voir les interventions
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- À PROPOS -->
+<section id="apropos" class="section section-white">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <h2 class="section-title" style="margin-bottom:28px;">À propos du<br>Dr Ghassen Chebbi</h2>
+        <p>Le Pr. Dr Ghassen Chebbi est chirurgien maxillo-facial et esthétique à Tunis. Il exerce à la <strong>Clinique La Rose, aux Jardins du Lac</strong>, où il prend en charge une patientèle tunisienne et internationale.</p>
+        <p>Spécialiste de la chirurgie du visage et de la silhouette, il réalise notamment des rhinoplasties, blépharoplasties, liftings cervico-faciaux, liposuccions 360° et HD, Brazilian Butt Lift (BBL), abdominoplasties, liftings des bras et des jambes, ainsi que des augmentations et liftings mammaires.</p>
+        <p>Auteur de publications scientifiques, il a notamment contribué à l'ouvrage <em>« Skin Expansion in the Repair of Facial Tissue Loss »</em>. Son approche repose sur la précision, la sécurité et la recherche de résultats naturels et harmonieux.</p>
+        <p>Le Pr. Dr Ghassen Chebbi accueille une patientèle francophone venant de <strong>France, Belgique, Suisse, Luxembourg, Canada, d'Afrique</strong> et de nombreux autres pays, avec un accompagnement personnalisé tout au long du parcours de soins. Son approche repose sur trois piliers : <strong>écoute</strong>, précision chirurgicale et résultat naturel.</p>
+        <p>Chaque projet esthétique est étudié avec attention afin de proposer une prise en charge personnalisée, adaptée à la morphologie, aux attentes et à la sécurité du patient.</p>
+      </div>
+      <div>
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A47A" stroke-width="1.5"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <div>
+            <div class="pillar-title">ÉCOUTE</div>
+            <div class="pillar-desc">Une écoute attentive pour comprendre vos attentes et vos besoins.</div>
+          </div>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A47A" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="9"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg>
+          </div>
+          <div>
+            <div class="pillar-title">PRÉCISION</div>
+            <div class="pillar-desc">Une précision chirurgicale pour un résultat naturel et harmonieux.</div>
+          </div>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A47A" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <div>
+            <div class="pillar-title">SÉCURITÉ</div>
+            <div class="pillar-desc">La sécurité avant tout, avec un suivi personnalisé à chaque étape.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERVENTIONS -->
+<section id="interventions" class="section section-cream">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Domaines d'intervention</h2>
+      <div class="gold-bar" style="margin:0 auto;"></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 18c2-6 4-9 9-9s7 3 9 9"/><path d="M3 18c1-2 2-3 4-3s3 1 5 1 4-1 5-1 3 1 4 3"/></svg>
+        </div>
+        <h3>Chirurgie Poitrine</h3>
+        <ul>
+          <li>Augmentation mammaire prothèses</li>
+          <li>Réduction mammaire</li>
+          <li>Lifting mammaire ou round block</li>
+          <li>Gynécomastie</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2c-2 0-4 2-4 5v2c0 1 .5 2 1 3l1 2v4a2 2 0 004 0v-4l1-2c.5-1 1-2 1-3V7c0-3-2-5-4-5z"/></svg>
+        </div>
+        <h3>Chirurgie du corps</h3>
+        <ul>
+          <li>Liposuccion</li>
+          <li>Liposculture</li>
+          <li>Lipofilling fesses (BBL)</li>
+          <li>Mini lifting abdominal</li>
+          <li>Abdominoplastie</li>
+          <li>Lifting du dos, cuisses, bras…</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="7" r="4"/><path d="M5.5 20a7 7 0 0113 0"/></svg>
+        </div>
+        <h3>Chirurgie du visage</h3>
+        <ul>
+          <li>Rhinoplastie</li>
+          <li>Fox eyes</li>
+          <li>Blépharoplastie</li>
+          <li>Lifting cervical et temporal</li>
+          <li>Lipofilling visage</li>
+          <li>Otoplastie bilatérale (oreille)</li>
+          <li>Génioplastie (menton)</li>
+          <li>Dimplastie (fossettes)</li>
+          <li>Bichectomie</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+        </div>
+        <h3>Chirurgie de l'intime</h3>
+        <ul>
+          <li>Nymphoplastie</li>
+        </ul>
+        <div class="service-note">Pour d'autres demandes, n'hésitez pas à nous contacter.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROCHE -->
+<section id="approche" class="section section-white">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Une prise en charge rassurante</h2>
+      <div class="gold-bar" style="margin:0 auto;"></div>
+    </div>
+    <div class="process-grid">
+      <div class="process-line"></div>
+      <div class="process-step">
+        <div class="step-circle active"><span class="step-num">01</span></div>
+        <div>
+          <div class="step-title">Consultation personnalisée</div>
+          <div class="step-desc">Échange approfondi pour comprendre vos attentes et évaluer vos besoins.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-circle inactive"><span class="step-num">02</span></div>
+        <div>
+          <div class="step-title">Analyse médicale du projet</div>
+          <div class="step-desc">Étude complète de votre morphologie et de vos antécédents.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-circle inactive"><span class="step-num">03</span></div>
+        <div>
+          <div class="step-title">Explications claires avant intervention</div>
+          <div class="step-desc">Présentation détaillée des techniques, résultats attendus et risques.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-circle inactive"><span class="step-num">04</span></div>
+        <div>
+          <div class="step-title">Suivi post-opératoire</div>
+          <div class="step-desc">Accompagnement personnalisé tout au long de votre récupération.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-circle inactive"><span class="step-num">05</span></div>
+        <div>
+          <div class="step-title">Résultats naturels, équilibrés et élégants</div>
+          <div class="step-desc">Des résultats harmonieux qui respectent votre identité.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RÉSEAUX SOCIAUX -->
+<section id="reseaux" class="section section-dark">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px;">
+      <div class="ig-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        INSTAGRAM
+      </div>
+      <div class="social-title">Découvrez les résultats en images</div>
+      <div class="social-sub">Avant / après réels, conseils post-opératoires et témoignages patients.</div>
+    </div>
+
+    <div class="ig-card" style="max-width:600px;margin:0 auto 20px;">
+      <div class="ig-card-halo"></div>
+      <a href="https://www.instagram.com/dr.ghassen.chebbi" target="_blank" rel="noopener">
+        <img class="ig-photo" src="https://d2ol7oe51mr4n9.cloudfront.net/user_39ojHRsaEKagfD8twfwdrnKphm9/b38e56f9-c0a8-4b45-b6dd-d8e85d35baa2.jpg" alt="Dr Ghassen Chebbi Instagram" />
+      </a>
+      <div class="ig-handle">@dr.ghassen.chebbi</div>
+      <div class="ig-label">Dr Ghassen Chebbi</div>
+      <div class="ig-desc">Résultats opératoires, conseils post-op et actualités du Dr Chebbi.</div>
+      <a href="https://www.instagram.com/dr.ghassen.chebbi" target="_blank" rel="noopener" class="btn-ig">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Voir sur Instagram
+      </a>
+    </div>
+
+    <div class="social-secondary">
+      <a href="https://www.facebook.com/profile.php?id=61591121904805" target="_blank" rel="noopener" class="fb-card">
+        <div class="fb-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </div>
+        <div>
+          <div class="fb-card-name">Facebook</div>
+          <div class="fb-card-sub">Dr Ghassen Chebbi · Actualités et conseils</div>
+        </div>
+        <svg class="fb-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="cta-grid">
+      <div>
+        <h2>Prêt à discuter de votre projet ?</h2>
+        <p>Contactez le Dr Ghassen Chebbi directement sur WhatsApp pour un avis médical personnalisé.</p>
+      </div>
+      <div class="cta-right">
+        <a href="https://wa.me/33744185975" target="_blank" rel="noopener" class="btn-wa-cta">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Contacter sur WhatsApp
+        </a>
+        <div class="cta-note">Réponse rapide et confidentielle</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="tel:+33744185975">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        +33 7 44 18 59 75
+      </a>
+      <a href="mailto:drghassenchebbi@gmail.com">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        drghassenchebbi@gmail.com
+      </a>
+    </div>
+    <div class="footer-copy">2024 Dr Ghassen Chebbi. Tous droits réservés.</div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+</script>
+</body>
+</html>

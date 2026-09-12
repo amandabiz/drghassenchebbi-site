@@ -3,8 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr Ghassen Chebbi — Chirurgien Maxillo-Facial & Esthétique</title>
-  <meta name="description" content="Chirurgien maxillo-facial et esthétique à Tunis. Rhinoplastie, BBL, abdominoplastie, lifting. Prenez rendez-vous sur WhatsApp." />
+  <title>Dr Ghassen Chebbi | Chirurgien maxillo-facial et esthétique à Tunis</title>
+  <meta name="description" content="Dr Ghassen Chebbi, chirurgien maxillo-facial et esthétique à Tunis, exerce à la Clinique La Rose. Chirurgie du visage, de la poitrine et de la silhouette." />
+  <link rel="canonical" href="https://www.drghassenchebbi.net/" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dr Ghassen Chebbi" />
+  <meta property="og:url" content="https://www.drghassenchebbi.net/" />
+  <meta property="og:title" content="Dr Ghassen Chebbi | Chirurgien maxillo-facial et esthétique à Tunis" />
+  <meta property="og:description" content="Chirurgien maxillo-facial et esthétique à Tunis, à la Clinique La Rose. Chirurgie du visage, de la poitrine et de la silhouette." />
+  <meta property="og:image" content="https://www.drghassenchebbi.net/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Dr Ghassen Chebbi, chirurgien maxillo-facial et esthétique à Tunis" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dr Ghassen Chebbi | Chirurgien maxillo-facial et esthétique à Tunis" />
+  <meta name="twitter:description" content="Chirurgien maxillo-facial et esthétique à Tunis, à la Clinique La Rose." />
+  <meta name="twitter:image" content="https://www.drghassenchebbi.net/og-image.jpg" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Physician","name":"Dr Ghassen Chebbi",
+   "medicalSpecialty":["PlasticSurgery","Oral"],
+   "description":"Chirurgien maxillo-facial et esthétique à Tunis, exerçant à la Clinique La Rose.",
+   "url":"https://www.drghassenchebbi.net/","image":"https://www.drghassenchebbi.net/og-image.jpg",
+   "email":"drghassenchebbi@gmail.com","telephone":"+33744185975",
+   "address":{"@type":"PostalAddress","addressLocality":"Tunis","addressRegion":"Les Jardins du Lac","addressCountry":"TN"},
+   "worksFor":{"@type":"MedicalClinic","name":"Clinique La Rose","address":{"@type":"PostalAddress","addressLocality":"Tunis","addressCountry":"TN"}},
+   "availableService":[{"@type":"MedicalProcedure","name":"Rhinoplastie"},{"@type":"MedicalProcedure","name":"Blépharoplastie"},{"@type":"MedicalProcedure","name":"Lifting cervico-facial"},{"@type":"MedicalProcedure","name":"Chirurgie mammaire"},{"@type":"MedicalProcedure","name":"Liposuccion"},{"@type":"MedicalProcedure","name":"Abdominoplastie"},{"@type":"MedicalProcedure","name":"Lipofilling"}]}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
@@ -18,6 +44,7 @@
       --dark: #1A1714;
       --dark-muted: rgba(26,23,20,0.65);
       --gold: #C9A47A;
+      --gold-deep: #9A6F3F;
       --gold-light: rgba(201,164,122,0.15);
       --gold-border: rgba(201,164,122,0.3);
       --whatsapp: #25D366;
@@ -28,9 +55,10 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       height: 72px; display: flex; align-items: center;
       justify-content: space-between; padding: 0 48px;
-      background: #1A1714; transition: background 0.3s;
+      background: var(--white); border-bottom: 1px solid rgba(26,23,20,0.06);
+      transition: background 0.3s, border-color 0.3s;
     }
-    nav.scrolled { background: rgba(26,23,20,0.97); backdrop-filter: blur(12px); }
+    nav.scrolled { background: rgba(255,255,255,0.97); border-bottom-color: rgba(26,23,20,0.10); backdrop-filter: blur(12px); }
     .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
     .nav-logo-circle {
       width: 36px; height: 36px; border-radius: 50%;
@@ -39,11 +67,11 @@
       font-family: 'Outfit', sans-serif; font-weight: 600;
       font-size: 13px; color: var(--gold); flex-shrink: 0;
     }
-    .nav-logo-text .name { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 15px; color: #fff; }
+    .nav-logo-text .name { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 15px; color: var(--dark); }
     .nav-logo-text .title { font-family: 'Inter', sans-serif; font-size: 10px; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; }
     .nav-links { display: flex; align-items: center; gap: 28px; }
-    .nav-links a { font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: #fff; }
+    .nav-links a { font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(26,23,20,0.60); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--dark); }
     .btn-wa {
       display: inline-flex; align-items: center; gap: 8px;
       background: var(--whatsapp); color: #fff;
@@ -55,7 +83,7 @@
 
     /* ── HERO ── */
     .hero {
-      min-height: 100vh; background: var(--dark);
+      min-height: 100vh; background: var(--cream);
       display: grid; grid-template-columns: 1fr 1fr; overflow: hidden;
     }
     .hero-photo { position: relative; overflow: hidden; }
@@ -86,11 +114,11 @@
       font-family: 'Outfit', sans-serif; font-weight: 700;
       font-size: clamp(44px, 4.5vw, 68px);
       line-height: 1.05; letter-spacing: -0.03em;
-      color: #fff; margin-bottom: 20px;
+      color: var(--dark); margin-bottom: 20px;
     }
     .hero-text p {
       font-family: 'Inter', sans-serif; font-size: 17px;
-      line-height: 1.7; color: rgba(255,255,255,0.65);
+      line-height: 1.7; color: var(--dark-muted);
       max-width: 420px; margin-bottom: 48px;
     }
     .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
@@ -104,17 +132,17 @@
     .btn-wa-lg:hover { transform: translateY(-2px); opacity: 0.9; }
     .hero-link {
       display: inline-flex; align-items: center; gap: 8px;
-      color: rgba(255,255,255,0.65); font-family: 'Inter', sans-serif; font-size: 15px;
-      text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.25);
+      color: var(--dark-muted); font-family: 'Inter', sans-serif; font-size: 15px;
+      text-decoration: none; border-bottom: 1px solid rgba(26,23,20,0.25);
       padding-bottom: 2px; transition: color 0.2s, border-color 0.2s;
     }
-    .hero-link:hover { color: #fff; border-color: rgba(255,255,255,0.7); }
+    .hero-link:hover { color: var(--dark); border-color: rgba(26,23,20,0.50); }
 
     /* ── SECTIONS ── */
     .section { padding: 100px 64px; }
     .section-cream { background: var(--cream); }
     .section-white { background: var(--white); }
-    .section-dark { background: var(--dark); }
+    .section-dark { background: var(--cream); }
     .section-title {
       font-family: 'Outfit', sans-serif; font-weight: 700;
       font-size: clamp(28px, 3vw, 44px);
@@ -194,10 +222,10 @@
       display: inline-flex; align-items: center; gap: 8px;
       background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
       border-radius: 100px; padding: 6px 18px; margin-bottom: 20px;
-      font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; color: #fff; letter-spacing: 0.06em;
+      font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; color: var(--dark); letter-spacing: 0.06em;
     }
-    .social-title { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(28px,3vw,42px); line-height: 1.1; letter-spacing: -0.02em; color: #fff; margin-bottom: 14px; }
-    .social-sub { font-family: 'Inter', sans-serif; font-size: 16px; color: rgba(255,255,255,0.55); max-width: 520px; margin: 0 auto; }
+    .social-title { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(28px,3vw,42px); line-height: 1.1; letter-spacing: -0.02em; color: var(--dark); margin-bottom: 14px; }
+    .social-sub { font-family: 'Inter', sans-serif; font-size: 16px; color: rgba(26,23,20,0.62); max-width: 520px; margin: 0 auto; }
     .ig-card {
       background: linear-gradient(135deg, #1a0a2e 0%, #0d1a2e 60%, #1a1714 100%);
       border: 1px solid var(--gold-border); border-radius: 20px; padding: 36px;
@@ -211,9 +239,9 @@
     }
     .ig-photo { display: block; width: 100%; aspect-ratio: 1; border-radius: 10px; object-fit: cover; border: 1px solid rgba(201,164,122,0.15); margin-bottom: 24px; transition: transform 0.2s; }
     .ig-photo:hover { transform: scale(1.02); }
-    .ig-handle { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 19px; color: #fff; margin-bottom: 6px; }
-    .ig-label { font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.35); margin-bottom: 10px; letter-spacing: 0.02em; }
-    .ig-desc { font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.6; margin-bottom: 24px; }
+    .ig-handle { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 19px; color: var(--dark); margin-bottom: 6px; }
+    .ig-label { font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(26,23,20,0.45); margin-bottom: 10px; letter-spacing: 0.02em; }
+    .ig-desc { font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(26,23,20,0.62); line-height: 1.6; margin-bottom: 24px; }
     .btn-ig {
       display: inline-flex; align-items: center; gap: 10px;
       background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
@@ -225,14 +253,14 @@
     .social-secondary { margin-top: 20px; }
     .fb-card {
       display: flex; align-items: center; gap: 16px;
-      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(26,23,20,0.03); border: 1px solid rgba(26,23,20,0.10);
       border-radius: 16px; padding: 24px; text-decoration: none;
       transition: border-color 0.2s, background 0.2s;
     }
     .fb-card:hover { border-color: var(--gold-border); background: rgba(201,164,122,0.05); }
     .fb-icon { width: 44px; height: 44px; border-radius: 12px; background: #1877F2; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-    .fb-card-name { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 15px; color: #fff; margin-bottom: 2px; }
-    .fb-card-sub { font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255,255,255,0.4); }
+    .fb-card-name { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 15px; color: var(--dark); margin-bottom: 2px; }
+    .fb-card-sub { font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(26,23,20,0.50); }
     .fb-arrow { margin-left: auto; flex-shrink: 0; }
 
     /* ── CTA ── */
@@ -251,11 +279,11 @@
     .cta-note { font-family: 'Inter', sans-serif; font-size: 13px; color: var(--dark-muted); text-align: center; }
 
     /* ── FOOTER ── */
-    footer { background: var(--dark); padding: 36px 64px; border-top: 1px solid rgba(255,255,255,0.07); }
+    footer { background: var(--white); padding: 36px 64px; border-top: 1px solid rgba(26,23,20,0.10); }
     .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
     .footer-links { display: flex; gap: 36px; flex-wrap: wrap; }
-    .footer-links a { display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255,255,255,0.45); text-decoration: none; }
-    .footer-copy { font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.25); }
+    .footer-links a { display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(26,23,20,0.55); text-decoration: none; }
+    .footer-copy { font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(26,23,20,0.45); }
 
     /* ── MOBILE ── */
     @media (max-width: 768px) {
@@ -277,6 +305,8 @@
       .footer-inner { flex-direction: column; }
       .footer-links { flex-direction: column; gap: 12px; }
     }
+    .hero-sub { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 500;
+      letter-spacing: 0.02em; line-height: 1.5; color: var(--gold-deep); margin-bottom: 24px; }
   </style>
 </head>
 <body>
@@ -313,14 +343,14 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A47A" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
       </div>
       <div>
-        <div class="b-title">Chirurgien certifié</div>
-        <div class="b-sub">Maxillo-facial &amp; Esthétique</div>
+        <div class="b-title">Chirurgien maxillo-facial et esthétique</div>
+        <div class="b-sub">Clinique La Rose &mdash; Tunis</div>
       </div>
     </div>
   </div>
   <div class="hero-text">
-    <div class="hero-eyebrow">Chirurgien Maxillo-Facial &amp; Esthétique</div>
     <h1>Dr Ghassen<br>Chebbi</h1>
+    <p class="hero-sub">Chirurgien maxillo-facial et esthétique à Tunis</p>
     <p>L'art d'harmoniser le visage et la silhouette avec précision, naturel et sécurité.</p>
     <div class="hero-ctas">
       <a href="https://wa.me/33744185975" target="_blank" rel="noopener" class="btn-wa-lg">
@@ -341,10 +371,11 @@
     <div class="about-grid">
       <div>
         <h2 class="section-title" style="margin-bottom:28px;">À propos du<br>Dr Ghassen Chebbi</h2>
-        <p>Le Pr. Dr Ghassen Chebbi est chirurgien maxillo-facial et esthétique à Tunis. Il exerce à la <strong>Clinique La Rose, aux Jardins du Lac</strong>, où il prend en charge une patientèle tunisienne et internationale.</p>
-        <p>Spécialiste de la chirurgie du visage et de la silhouette, il réalise notamment des rhinoplasties, blépharoplasties, liftings cervico-faciaux, liposuccions 360° et HD, Brazilian Butt Lift (BBL), abdominoplasties, liftings des bras et des jambes, ainsi que des augmentations et liftings mammaires.</p>
-        <p>Auteur de publications scientifiques, il a notamment contribué à l'ouvrage <em>« Skin Expansion in the Repair of Facial Tissue Loss »</em>. Son approche repose sur la précision, la sécurité et la recherche de résultats naturels et harmonieux.</p>
-        <p>Le Pr. Dr Ghassen Chebbi accueille une patientèle francophone venant de <strong>France, Belgique, Suisse, Luxembourg, Canada, d'Afrique</strong> et de nombreux autres pays, avec un accompagnement personnalisé tout au long du parcours de soins. Son approche repose sur trois piliers : <strong>écoute</strong>, précision chirurgicale et résultat naturel.</p>
+        <p>Le Dr Ghassen Chebbi est chirurgien maxillo-facial et esthétique à Tunis. Il exerce à la <strong>Clinique La Rose, aux Jardins du Lac</strong>, où il accompagne une patientèle tunisienne et internationale.</p>
+        <p>Son expertise couvre la chirurgie esthétique du visage, de la poitrine et de la silhouette, notamment la <strong>rhinoplastie</strong>, la blépharoplastie, le lifting cervico-facial, la chirurgie mammaire, la liposuccion, l'abdominoplastie et le lipofilling.</p>
+        <p>Sa pratique repose sur une évaluation personnalisée de chaque patient, la précision chirurgicale, la sécurité et la recherche de résultats naturels et harmonieux.</p>
+        <p>Auteur et coauteur de travaux scientifiques en chirurgie maxillo-faciale et reconstructrice, il accorde une attention particulière à l'écoute du patient et à la qualité du suivi avant et après l'intervention.</p>
+        <p>Il accueille une patientèle francophone venant de <strong>France, Belgique, Suisse, Luxembourg, Canada, d'Afrique</strong> et de nombreux autres pays, avec un accompagnement personnalisé tout au long du parcours de soins.</p>
         <p>Chaque projet esthétique est étudié avec attention afin de proposer une prise en charge personnalisée, adaptée à la morphologie, aux attentes et à la sécurité du patient.</p>
       </div>
       <div>
@@ -528,7 +559,7 @@
           <div class="fb-card-name">Facebook</div>
           <div class="fb-card-sub">Dr Ghassen Chebbi · Actualités et conseils</div>
         </div>
-        <svg class="fb-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <svg class="fb-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(26,23,20,0.35)" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
   </div>
@@ -566,7 +597,7 @@
         drghassenchebbi@gmail.com
       </a>
     </div>
-    <div class="footer-copy">2024 Dr Ghassen Chebbi. Tous droits réservés.</div>
+    <div class="footer-copy">&copy; 2026 Dr Ghassen Chebbi. Tous droits réservés.</div>
   </div>
 </footer>
 
